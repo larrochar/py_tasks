@@ -25,7 +25,7 @@ names = ["uNMATCHED", "Matched", "lower", "UPPER", "a", "", 1, {1, 2}]
 
 def hello_user(username):
     # seems legit to task, but will fail on hello_user("")
-    print("Hello, " + username.upper()[0] + username.lower()[1:]+"!")
+    print("Hello, " + username.upper()[0] + username.lower()[1:] + "!")
 
 
 for name in names[:4]:
@@ -35,7 +35,7 @@ for name in names[:4]:
 def hello_user_opt(username):
     # will work without crush if only string value is given
     if len(username) > 0:
-        print("Hello, " + username.upper()[0] + username.lower()[1:]+"!")
+        print("Hello, " + username.upper()[0] + username.lower()[1:] + "!")
     else:
         print("Hello, The Faceless Man!")
 
@@ -49,11 +49,11 @@ def hello_opt(username):
     # which is not a constructive way to destroy an app
     if type(username) is str:
         if len(username) > 0:
-            print("Hello, " + username.upper()[0] + username.lower()[1:]+"!")
+            print("Hello, " + username.upper()[0] + username.lower()[1:] + "!")
         else:
             print("No name - no greetings!")
     else:
-        print("I used to greet you but then I took a "+str(type(username))+" in the knee...")
+        print("I used to greet you but then I took a " + str(type(username)) + " in the knee...")
 
 
 for name in names:
@@ -85,6 +85,8 @@ class NoizyDog(Dog):
     def bark(self, times=1):
         for i in range(times):
             print('BARK!!!')
+        # while True:
+        #     print('BARK!!!')
 
 
 class SmartNoizyDog(SmartDog, NoizyDog):
@@ -105,6 +107,6 @@ SmartDog().givepaw()
 # but smart and noisy dog can paw like SmartDog:
 SmartNoizyDog().givepaw()
 # and bark like NoizyDog:
-NoizyDog.bark(SmartNoizyDog(),3)
+NoizyDog.bark(SmartNoizyDog(), 3)
 # or SmartDog:
-SmartDog.bark(SmartNoizyDog(),3)
+SmartDog.bark(SmartNoizyDog(), 3)
